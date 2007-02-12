@@ -1,5 +1,5 @@
 Summary:	A eyes plugin for Xfce panel
-Summary(pl):	Wtyczka eyes dla panelu Xfce
+Summary(pl.UTF-8):   Wtyczka eyes dla panelu Xfce
 Name:		xfce4-eyes-plugin
 Version:	4.4.0
 Release:	1
@@ -23,9 +23,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This plugin adds eyes to the Xfce panel which watch user every step.
 
-%description -l pl
-Ta wtyczka dodaje oczy do panelu Xfce, ktÛre patrz± na kaødy krok
-uøytkownika.
+%description -l pl.UTF-8
+Ta wtyczka dodaje oczy do panelu Xfce, kt√≥re patrzƒÖ na ka≈ºdy krok
+u≈ºytkownika.
 
 %prep
 %setup -q

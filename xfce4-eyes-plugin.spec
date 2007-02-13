@@ -24,7 +24,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This plugin adds eyes to the Xfce panel which watch user every step.
 
 %description -l pl.UTF-8
-Ta wtyczka dodaje oczy do panelu Xfce, które patrzą na każdy krok
+Ta wtyczka dodaje do panelu Xfce oczy, które patrzą na każdy krok
 użytkownika.
 
 %prep

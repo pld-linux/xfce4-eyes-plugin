@@ -1,23 +1,23 @@
 Summary:	A eyes plugin for Xfce panel
 Summary(pl.UTF-8):	Wtyczka eyes dla panelu Xfce
 Name:		xfce4-eyes-plugin
-Version:	4.4.0
-Release:	2
+Version:	4.4.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://goodies.xfce.org/releases/xfce4-eyes-plugin/%{name}-%{version}.tar.bz2
-# Source0-md5:	d0e3e25c0ab031e68c79b2358664ac9d
+Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-eyes-plugin/4.4/%{name}-%{version}.tar.bz2
+# Source0-md5:	dcbf6ea9035d379d168b479be0d09f14
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-eyes-plugin
 BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.8
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	xfce4-dev-tools >= 4.4.0
 BuildRequires:	xfce4-panel-devel >= 4.4.0
-Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	hicolor-icon-theme
+Requires:	gtk-update-icon-cache
+Requires:	hicolor-icon-theme
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,8 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{nb_NO,nb}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{pt_PT,pt}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
 
 %find_lang %{name}
 

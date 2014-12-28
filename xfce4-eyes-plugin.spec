@@ -10,7 +10,7 @@ Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-eyes-plugin/4.4/%{name}
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-eyes-plugin
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libxfce4ui-devel

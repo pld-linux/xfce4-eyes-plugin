@@ -1,12 +1,12 @@
 Summary:	A eyes plugin for Xfce panel
 Summary(pl.UTF-8):	Wtyczka eyes dla panelu Xfce
 Name:		xfce4-eyes-plugin
-Version:	4.5.1
+Version:	4.6.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-eyes-plugin/4.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	2bc3dfd7b4e8364eed17525a8ba583d4
+Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-eyes-plugin/4.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	1e4699c981ea6435d0ce06a8d8fad0b0
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-eyes-plugin
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8

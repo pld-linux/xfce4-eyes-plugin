@@ -1,23 +1,24 @@
 Summary:	A eyes plugin for Xfce panel
 Summary(pl.UTF-8):	Wtyczka eyes dla panelu Xfce
 Name:		xfce4-eyes-plugin
-Version:	4.6.0
+Version:	4.6.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-eyes-plugin/4.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	1e4699c981ea6435d0ce06a8d8fad0b0
-URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-eyes-plugin
+Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-eyes-plugin/4.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	13605bcef3e75d36cc9c0899655f6eb7
+URL:		https://goodies.xfce.org/projects/panel-plugins/xfce4-eyes-plugin
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	gettext-tools
-BuildRequires:	intltool
+BuildRequires:	glib2-devel >= 1:2.50.0
+BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	libtool
-BuildRequires:	libxfce4ui-devel
+BuildRequires:	libxfce4ui-devel >= 4.16.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.601
-BuildRequires:	xfce4-dev-tools >= 4.14.0
-BuildRequires:	xfce4-panel-devel >= 4.14.0
+BuildRequires:	xfce4-dev-tools >= 4.16.0
+BuildRequires:	xfce4-panel-devel >= 4.16.0
 Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -35,7 +36,6 @@ użytkownika.
 mkdir -p m4
 
 %build
-%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}

@@ -1,20 +1,19 @@
 Summary:	A eyes plugin for Xfce panel
 Summary(pl.UTF-8):	Wtyczka eyes dla panelu Xfce
 Name:		xfce4-eyes-plugin
-Version:	4.6.2
+Version:	4.7.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-eyes-plugin/4.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	13605bcef3e75d36cc9c0899655f6eb7
+Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-eyes-plugin/4.7/%{name}-%{version}.tar.xz
+# Source0-md5:	3ce7965b7d6a1cd921c41514860b4ee5
 URL:		https://goodies.xfce.org/projects/panel-plugins/xfce4-eyes-plugin
-BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake >= 1:1.8
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	gtk+3-devel >= 3.22.0
-BuildRequires:	libtool
 BuildRequires:	libxfce4ui-devel >= 4.16.0
+BuildRequires:	meson >= 0.54.0
+BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	xfce4-dev-tools >= 4.16.0
@@ -36,21 +35,13 @@ użytkownika.
 mkdir -p m4
 
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--disable-static
-%{__make}
+%meson
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/xfce4/panel/plugins/libeyes.la
+%meson_install
 
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/hy_AM
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/hye
@@ -70,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS
+%doc AUTHORS NEWS README.md
 %attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libeyes.so
 %{_datadir}/xfce4/panel/plugins/eyes.desktop
 %{_datadir}/xfce4/eyes
